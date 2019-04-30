@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby'
+import Footer from './Footer';
 
-const LayoutStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 *,
 *::after,
 *::before {
@@ -82,9 +83,12 @@ const Layout = ({ children }) => (
             <link rel="icon" type="image/png" sizes="16x16" href={`https:${profile.favicon16.src}`} />
           </Helmet>
 
-          <LayoutStyle />
+          <GlobalStyle />
           <ThemeProvider theme={{}}>
-            {children}
+            <React.Fragment>
+              {children}
+              <Footer />
+            </React.Fragment>
           </ThemeProvider>
         </React.Fragment>
       );

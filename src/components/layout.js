@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby'
 import Footer from './Footer';
+import theme from '../utils/theme';
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -81,10 +82,17 @@ const Layout = ({ children }) => (
             <link rel="apple-touch-icon" sizes="180x180" href={`https:${profile.appleIcon.src}`} />
             <link rel="icon" type="image/png" sizes="32x32" href={`https:${profile.favicon32.src}`} />
             <link rel="icon" type="image/png" sizes="16x16" href={`https:${profile.favicon16.src}`} />
+
+            <link
+              href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+              rel="stylesheet"
+              integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+              crossOrigin="anonymous"
+            />
           </Helmet>
 
           <GlobalStyle />
-          <ThemeProvider theme={{}}>
+          <ThemeProvider theme={theme}>
             <React.Fragment>
               {children}
               <Footer />

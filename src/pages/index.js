@@ -3,33 +3,12 @@ import styled from 'styled-components';
 import { Heading } from 'rebass';
 import Layout from "../components/Layout"
 
-// const SectionContainer = styled.div`
-//   display: flex;
-//   margin: auto;
-//   flex: 0 1 auto;
-//   flex-direction: column;
-//   justify-content: center;
-//   padding: 5em 1em;
-//   scroll-behavior: smooth;
-// `;
-
-
-// const SectionContainer = styled.main`
-//   min-width: 100vw;
-//   width: 100vw;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   padding: 1em 5em;
-//   scroll-behavior: smooth;
-// `;
+// TODO: break up components on footer
+// TODO: set up grid correctly (use something?)
+// TODO: add space invader
+// TODO: finish about me section
+// TODO: finish links
 //
-// const MainHeading = styled.h1`
-//   font-size: 7vw;
-//   color: black;
-// `;
-
-
 const SectionContainer = styled.main`
   display: flex;
   flex-direction: row;
@@ -65,11 +44,3 @@ const IndexPage = () => (
 )
 
 export default IndexPage
-
-
-
-// <p>
-//         <span role="img" aria-label="love">❤️</span>
-//         <span role="img" aria-label="death">💀</span>
-//         <span role="img" aria-label="robots">🤖</span>
-//       </p>

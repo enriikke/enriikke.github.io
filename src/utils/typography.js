@@ -6,7 +6,7 @@ const typography = new Typography({
   googleFonts: [
     {
       name: 'Rubik',
-      styles: ['300', '400'],
+      styles: ['300', '400', '500', '700'],
     },
     {
       name: 'Ubuntu',
@@ -29,7 +29,7 @@ const typography = new Typography({
     'Arial',
     'sans-serif',
   ],
-  bodyFontFamily: ['Open Sans', 'Georgia', 'sans-serif'],
+  bodyFontFamily: ['Rubik', 'Open Sans', 'Georgia', 'sans-serif'],
 })
 
 export default typography

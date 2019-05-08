@@ -3,23 +3,22 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby'
-import Footer from './Footer';
 import theme from '../utils/theme';
 
 const GlobalStyle = createGlobalStyle`
 *,
 *::after,
 *::before {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+  box-sizing: beforer-box;
 }
 
 body {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   margin: 0;
-  font-family: Cabin;
   overflow-x: hidden;
+  @media (max-width: 300px) {
+    overflow-x: scroll;
+  }
 }
 `;
 
@@ -93,10 +92,7 @@ const Layout = ({ children }) => (
 
           <GlobalStyle />
           <ThemeProvider theme={theme}>
-            <React.Fragment>
-              {children}
-              <Footer />
-            </React.Fragment>
+            {children}
           </ThemeProvider>
         </React.Fragment>
       );

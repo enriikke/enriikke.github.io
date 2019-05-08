@@ -1,35 +1,21 @@
 import Typography from 'typography'
 
 const typography = new Typography({
-  baseFontSize: '24px',
+  baseFontSize: '18px',
   baseLineHeight: 1.5,
   googleFonts: [
     {
-      name: 'Rubik',
-      styles: ['300', '400', '500', '700'],
-    },
-    {
       name: 'Ubuntu',
-      styles: ['300', '400'],
-    },
-    {
-      name: 'Roboto',
-      styles: ['300', '400'],
-    },
-    {
-      name: 'Open Sans',
-      styles: ['300', '400'],
+      styles: ['300', '400', '500', '700', '800', '900'],
     },
   ],
   headerFontFamily: [
-    'Rubik',
-    'Roboto',
     'Ubuntu',
     'Helvetica',
     'Arial',
     'sans-serif',
   ],
-  bodyFontFamily: ['Rubik', 'Open Sans', 'Georgia', 'sans-serif'],
+  bodyFontFamily: ['Ubuntu', 'Georgia', 'sans-serif'],
 })
 
 export default typography

@@ -3,17 +3,10 @@ module.exports = {
     title: `Enrique Gonzalez`,
     description: `Enrique's personal site. A collection of thougts on programming, health, family, fun, and anything that comes to mind. I'm a software engineer, ocassional freelancer, interested in AI and Machine Learning.`,
     author: `@enriikke`,
-
-    profile: {
-      resize: {
-        src: "//placekitten.com/g/200/300"
-      }
-    }
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,13 +17,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Enrique`,
+        short_name: `enriikke`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fff`,
+        theme_color: `#7b68ee`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/enrique-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -39,5 +32,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-offline`,
   ],
 }

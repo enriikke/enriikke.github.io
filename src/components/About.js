@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Container, Column } from './System'
-import SpaceInvader from '../components/SpaceInvader'
+import React from "react"
+import styled from "styled-components"
+import { Container, Column } from "./System"
+import SpaceInvader from "../components/SpaceInvader"
 
 const AboutSection = styled.section`
   background-color: #f7f7f7;
@@ -25,12 +25,8 @@ const About = () => (
     <Container>
       <Column>
         <h2>About</h2>
-        <p>
-          TBD
-        </p>
-        <button>
-          Download Resume
-        </button>
+        <p>TBD</p>
+        <button>Download Resume</button>
       </Column>
 
       <Column>

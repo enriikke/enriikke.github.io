@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
-import theme from '../utils/theme'
-import logo from '../assets/enrique-icon.png'
-import MariaFont from '../assets/fonts/maria.woff'
-import GTAmericaFont from '../assets/fonts/gt-america.woff'
+import React from "react"
+import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
+import { createGlobalStyle, ThemeProvider } from "styled-components"
+import { StaticQuery, graphql } from "gatsby"
+import theme from "../utils/theme"
+import logo from "../assets/enrique-icon.png"
+import MariaFont from "../assets/fonts/maria.woff"
+import GTAmericaFont from "../assets/fonts/gt-america.woff"
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -96,12 +96,12 @@ const RootLayout = ({ children }) => (
   <StaticQuery
     query={RootLayoutQuery}
     render={data => {
-      const lang = 'en'
+      const lang = "en"
       const { title, description, author } = data.site.siteMetadata
 
       return (
         <React.Fragment>
-          <Helmet htmlAttributes={{ lang, }}>
+          <Helmet htmlAttributes={{ lang }}>
             <meta charSet="utf-8" />
             <title>{title}</title>
             <meta name="description" content={description} />
@@ -129,7 +129,7 @@ const RootLayout = ({ children }) => (
             </React.Fragment>
           </ThemeProvider>
         </React.Fragment>
-      );
+      )
     }}
   />
 )

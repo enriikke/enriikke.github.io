@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Container } from './System'
-import SocialLinks from './SocialLinks'
-import DarkModeToggle from './DarkModeToggle'
+import React from "react"
+import styled from "styled-components"
+import { Container } from "./System"
+import SocialLinks from "./SocialLinks"
+import DarkModeToggle from "./DarkModeToggle"
 
 const HeaderSection = styled.header`
   position: absolute;

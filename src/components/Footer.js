@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
 const Container = styled.footer`
   display: flex;
@@ -26,7 +26,7 @@ const Container = styled.footer`
   h2 {
     font-weight: 300;
   }
-`;
+`
 
 const Wrapper = styled.div`
   flex: 1;
@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   max-width: 1406px;
-`;
+`
 
 const Footer = () => (
   <Container>

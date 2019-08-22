@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import { graphql } from 'gatsby'
-import RootLayout from './RootLayout'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import { Main, Container, Column } from '../components/System'
+import React from "react"
+import styled from "styled-components"
+import { graphql } from "gatsby"
+import RootLayout from "./RootLayout"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import { Main, Container, Column } from "../components/System"
 
 const ArticleContainer = styled(Container)`
   padding-top: 10rem;
@@ -14,23 +14,29 @@ const ArticleContainer = styled(Container)`
     margin-bottom: 3rem;
   }
 
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     width: 50%;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   p {
     width: 50%;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 
     a {
-      background-image: linear-gradient(180deg, transparent 65%, ${props => props.theme.colors.accent} 0);
+      background-image: linear-gradient(
+        180deg,
+        transparent 65%,
+        ${props => props.theme.colors.accent} 0
+      );
       background-size: 0 100%;
       background-repeat: no-repeat;
       text-decoration: none;
-      transition: background-size .4s ease;
+      transition: background-size 0.4s ease;
       color: ${props => props.theme.colors.text};
 
       &:hover {
@@ -41,8 +47,8 @@ const ArticleContainer = styled(Container)`
 
   pre {
     width: 75%;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   figcaption {

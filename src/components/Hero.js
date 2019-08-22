@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Container, Column } from './System'
+import React from "react"
+import styled from "styled-components"
+import { Container, Column } from "./System"
 
 const HeroSection = styled.section`
   display: flex;
@@ -33,7 +33,11 @@ const Hero = () => (
   <HeroSection>
     <Container>
       <Column>
-        <h1>Enrique<br />Gonzalez</h1>
+        <h1>
+          Enrique
+          <br />
+          Gonzalez
+        </h1>
       </Column>
     </Container>
   </HeroSection>

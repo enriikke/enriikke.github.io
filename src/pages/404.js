@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import PageLayout from '../layouts/PageLayout'
+import React from "react"
+import styled from "styled-components"
+import PageLayout from "../layouts/PageLayout"
 
 const Main = styled.main`
   display: flex;
@@ -13,7 +13,7 @@ const Main = styled.main`
   max-width: 1800px;
   margin: 0 auto;
   min-width: 300px;
-`;
+`
 
 // TODO: add a way to go back home
 const NotFoundPage = () => (

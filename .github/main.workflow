@@ -3,13 +3,16 @@ workflow "Publish to GitHub Pages" {
   on = "push"
 }
 
-action "On Master" {
+action "On Dev" {
   uses = "actions/bin/filter@master"
-  args = "branch master"
+  args = "branch dev"
 }
 
 action "Gatsby Publish" {
   uses = "enriikke/gatsby-gh-pages-action@1.0.0"
   secrets = ["ACCESS_TOKEN"]
-  needs = ["On Master"]
+  env = {
+    DEPLOY_BRANCH = "master"
+  }
+  needs = ["On Dev"]
 }

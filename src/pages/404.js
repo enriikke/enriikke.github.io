@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components';
-import Layout from '../components/Layout'
+import styled from 'styled-components'
+import PageLayout from '../layouts/PageLayout'
 
 const Main = styled.main`
   display: flex;
@@ -15,13 +15,14 @@ const Main = styled.main`
   min-width: 300px;
 `;
 
+// TODO: add a way to go back home
 const NotFoundPage = () => (
-  <Layout>
+  <PageLayout>
     <Main>
       <h1>NOT FOUND</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     </Main>
-  </Layout>
+  </PageLayout>
 )
 
 export default NotFoundPage

@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Container } from "./System"
 import SocialLinks from "./SocialLinks"
 import Button from "./Button"
+import Resume from "../assets/docs/Resume.pdf"
 
 const HeaderSection = styled.header`
   position: absolute;
@@ -57,7 +58,7 @@ const Header = () => {
         <Nav>
           <SocialLinks />
           <Separator />
-          <Button>Resume</Button>
+          <Button href={Resume}>Resume</Button>
         </Nav>
       </Container>
     </HeaderSection>

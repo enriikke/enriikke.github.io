@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Container } from "./System"
 import SocialLinks from "./SocialLinks"
-import DarkModeToggle from "./DarkModeToggle"
+import Button from "./Button"
 
 const HeaderSection = styled.header`
   position: absolute;
@@ -10,8 +10,26 @@ const HeaderSection = styled.header`
   left: 0;
   width: 100%;
   z-index: 100;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 3em;
+  padding-bottom: 3em;
+
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+    padding-top: 2em;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 12px;
+    padding-top: 2em;
+  }
 `
 
 const Nav = styled.nav`
@@ -39,7 +57,7 @@ const Header = () => {
         <Nav>
           <SocialLinks />
           <Separator />
-          <DarkModeToggle />
+          <Button>Resume</Button>
         </Nav>
       </Container>
     </HeaderSection>

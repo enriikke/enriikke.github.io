@@ -1,45 +1,70 @@
 import React from "react"
 import styled from "styled-components"
-import { Container, Column } from "./System"
+import { FancyLink } from "./System"
 
 const HeroSection = styled.section`
+  font-size: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
   min-height: 100vh;
+  max-width: 1440px;
+  min-width: 350px;
+  margin: 0 auto;
+  padding-top: 7em;
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-bottom: 5em;
+  overflow-x: scroll;
 
-  h1 {
-    font-size: 5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-
-    .dark-mode & {
-      color: ${props => props.theme.colors.novaGrey};
-    }
+  p {
+    font-weight: ${props => props.theme.font.thin};
+    line-height: 1.5em;
+    max-width: 800px;
+    color: #444452;
   }
 
-  h2 {
-    text-align: center;
-    font-weight: 400;
-
-    .dark-mode & {
-      color: ${props => props.theme.colors.novaGrey};
-    }
+  @media (max-width: 1000px) {
+    font-size: 18px;
   }
+
+  @media (max-width: 800px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 12px;
+  }
+`
+
+const BigText = styled.p`
+  font-size: 2em;
+`
+
+const RegText = styled.p`
+  font-size: 1.2em;
 `
 
 const Hero = () => (
   <HeroSection>
-    <Container>
-      <Column>
-        <h1>
-          Enrique
-          <br />
-          Gonzalez
-        </h1>
-      </Column>
-    </Container>
+    <BigText>
+      👋 Hola! I'm <strong>Enrique</strong>.
+    </BigText>
+    <BigText>
+      A software engineer specializing in building high-quality web applications
+      and finding ways to augment them with machine learning.
+    </BigText>
+
+    <RegText>
+      I'm available for limited freelance work!
+      <br />
+      👉{" "}
+      <FancyLink href="mailto:enriikke@gmail.com">enriikke@gmail.com</FancyLink>
+    </RegText>
   </HeroSection>
 )
 

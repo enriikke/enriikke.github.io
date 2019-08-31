@@ -11,7 +11,7 @@ const SocialLinksContainer = styled(Container)`
   flex-direction: row;
   align-items: center;
   padding: 0;
-  font-size: 0.8em;
+  font-size: 1em;
 
   ${Link} {
     margin-left: 1.5em;

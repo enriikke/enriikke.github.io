@@ -31,6 +31,7 @@ export const Column = styled.div`
 // TODO: repetitive?
 export const Link = styled.a`
   color: ${props => props.theme.colors.textLight};
+  color: #444452;
   .dark-mode & {
     color: ${props => props.theme.colors.novaGrey};
   }

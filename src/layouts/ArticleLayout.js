@@ -1,12 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql } from "gatsby"
+// import { graphql } from "gatsby"
 import RootLayout from "./RootLayout"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import { Main, Container, Column } from "../components/System"
 
-const ArticleContainer = styled(Container)`
+const ArticleContainer = styled.div`
   padding-top: 10rem;
 
   h1 {
@@ -65,17 +64,17 @@ const ArticleLayout = ({ data }) => {
   return (
     <RootLayout>
       <Header />
-      <Main>
+      <main>
         <ArticleContainer>
-          <Column>
+          <div>
             <h1>{frontmatter.title}</h1>
             <h4>{frontmatter.date}</h4>
             <h4>{markdownRemark.timeToRead} Min. Read</h4>
 
             <article dangerouslySetInnerHTML={{ __html: html }} />
-          </Column>
+          </div>
         </ArticleContainer>
-      </Main>
+      </main>
       <Footer />
     </RootLayout>
   )

@@ -2,12 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import RootLayout from "./RootLayout"
 import Header from "../components/Header"
-import { Main } from "../components/System"
 
 const PageLayout = ({ children }) => (
   <RootLayout>
     <Header />
-    <Main>{children}</Main>
+    <main>{children}</main>
   </RootLayout>
 )
 

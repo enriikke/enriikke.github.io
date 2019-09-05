@@ -5,24 +5,8 @@ import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { StaticQuery, graphql } from "gatsby"
 import theme from "../utils/theme"
 import logo from "../assets/enrique-icon.png"
-import MariaFont from "../assets/fonts/maria.woff"
-import GTAmericaFont from "../assets/fonts/gt-america.woff"
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: "Maria";
-    font-style: normal;
-    font-weight: normal;
-    src: url(${MariaFont});
-  }
-
-  @font-face {
-    font-family: "GT America";
-    font-style: normal;
-    font-weight: normal;
-    src: url(${GTAmericaFont});
-  }
-
   *,
   *::after,
   *::before {
@@ -33,50 +17,45 @@ const GlobalStyle = createGlobalStyle`
 
   *::selection {
     background-color: ${props => props.theme.colors.selectionLight};
-
-    &.dark-mode {
-      background: ${props => props.theme.colors.selectionDark};
-    }
   }
 
   body {
     margin: 0;
-    overflow-x: hidden;
     transition: background .5s ease-in-out;
     background: ${props => props.theme.colors.backgroundLight};
-
-    &.dark-mode {
-      background: ${props => props.theme.colors.backgroundDark};
-    }
   }
 
   h1, h2, h3, h4 {
     transition: color .5s ease-in-out;
-    color: ${props => props.theme.colors.headerLight};
-
-    .dark-mode & {
-      color: ${props => props.theme.colors.headerDark};
-    }
+    color: ${props => props.theme.colors.headerTextLight};
   }
 
   p, a {
     transition: color .5s ease-in-out;
-    color: ${props => props.theme.colors.textLight};
     font-weight: 300;
+  }
 
-    .dark-mode & {
-      color: ${props => props.theme.colors.textDark};
-    }
+  p {
+    color: ${props => props.theme.colors.textLight};
   }
 
   a {
-    color: inherit;
+    color: ${props => props.theme.colors.linkTextLight};
     text-decoration: none;
+    &:hover {
+      color: ${props => props.theme.colors.linkTextHoverLight};
+    }
   }
 
   ul {
     padding: 0;
     list-style-type: none;
+  }
+
+  @media (max-width: ${props => props.theme.layout.xsBreakpoint}) {
+    html {
+      font-size: 14px;
+    }
   }
 `
 

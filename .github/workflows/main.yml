@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Gatsby Publish
-        uses: enriikke/gatsby-gh-pages-action@1.0.0
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          DEPLOY_BRANCH: master
+        uses: enriikke/gatsby-gh-pages-action@fe9215f
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}

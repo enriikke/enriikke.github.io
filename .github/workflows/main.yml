@@ -1,0 +1,20 @@
+name: Publish to GitHub Pages
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v1
+
+      - name: Gatsby Publish
+        uses: enriikke/gatsby-gh-pages-action@1.0.0
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          DEPLOY_BRANCH: master

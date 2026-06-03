@@ -4,7 +4,10 @@ import Link from 'next/link'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon, XIcon } from '@/components/SocialIcons'
-import avatarImage from '@/images/avatar.jpg'
+import githubLogo from '@/images/logos/github.svg'
+import kyckLogo from '@/images/logos/kyck.svg'
+import skookumLogo from '@/images/logos/skookum.svg'
+import portraitImage from '@/images/portrait.jpg'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -68,7 +71,7 @@ function Role({ role }: { role: Role }) {
   return (
     <li className="flex gap-4">
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7 rounded-full object-cover" unoptimized />
+        <Image src={role.logo} alt="" className="h-7 w-7 object-contain" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
@@ -90,7 +93,7 @@ function Work() {
     {
       company: 'GitHub',
       title: 'Senior Software Engineer',
-      logo: avatarImage,
+      logo: githubLogo,
       start: '2018',
       end: {
         label: 'Present',
@@ -100,14 +103,14 @@ function Work() {
     {
       company: 'Skookum',
       title: 'Senior Software Engineer',
-      logo: avatarImage,
+      logo: skookumLogo,
       start: '2014',
       end: '2018',
     },
     {
       company: 'KYCK',
       title: 'Software Engineer',
-      logo: avatarImage,
+      logo: kyckLogo,
       start: '2013',
       end: '2014',
     },
@@ -128,6 +131,20 @@ function Work() {
         Download Resume
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
+    </div>
+  )
+}
+
+function Portrait() {
+  return (
+    <div className="max-w-xs px-2.5 lg:max-w-none">
+      <Image
+        src={portraitImage}
+        alt=""
+        sizes="(min-width: 1024px) 32rem, 20rem"
+        className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+        priority
+      />
     </div>
   )
 }
@@ -185,27 +202,70 @@ function Contact() {
 export default function Home() {
   return (
     <Container className="mt-16 sm:mt-32">
-      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-y-12">
+      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+        <div className="lg:pl-20">
+          <Portrait />
+        </div>
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I’m Enrique Gonzalez. I build AI-powered developer experiences at GitHub.
-          </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">About</h1>
+          <div className="mt-10 space-y-10 text-lg text-zinc-700 dark:text-zinc-300">
             <p>
-              I’m a senior software engineer at GitHub, where I build full-stack product experiences and platform
-              capabilities for GitHub Copilot across GitHub.com, Copilot Chat, agent workflows, memory and context
-              systems, and developer tooling.
+              Hey, I’m Enrique. I’m a software engineer at{' '}
+              <Link
+                href="https://github.com"
+                className="underline decoration-zinc-400 underline-offset-4 hover:text-teal-500 hover:decoration-teal-500"
+              >
+                GitHub
+              </Link>
+              .
+            </p>
+            <p>I like building web apps, developer tools, and AI-powered product experiences.</p>
+            <p>
+              Recently I’ve been working on GitHub Copilot, including{' '}
+              <Link
+                href="https://github.com/copilot"
+                className="underline decoration-zinc-400 underline-offset-4 hover:text-teal-500 hover:decoration-teal-500"
+              >
+                Copilot on GitHub.com
+              </Link>
+              , GitHub Spark, MCP integrations, and memory/context systems for Copilot Business and Enterprise.
             </p>
             <p>
-              My recent work has focused on turning AI capabilities into production product experiences: launching
-              Copilot on GitHub.com, building agent runtime and frontend foundations for GitHub Spark, helping establish
-              MCP-compatible extension patterns, and leading user-scoped Copilot Memory for Business and Enterprise
-              customers.
+              Before that, I worked on{' '}
+              <Link
+                href="https://github.com/sponsors"
+                className="underline decoration-zinc-400 underline-offset-4 hover:text-teal-500 hover:decoration-teal-500"
+              >
+                GitHub Sponsors
+              </Link>{' '}
+              and{' '}
+              <Link
+                href="https://github.com/marketplace"
+                className="underline decoration-zinc-400 underline-offset-4 hover:text-teal-500 hover:decoration-teal-500"
+              >
+                GitHub Marketplace
+              </Link>
+              . Before GitHub, I built software at Skookum and KYCK.
             </p>
             <p>
-              Before GitHub, I worked at Skookum and KYCK building web products across Rails, React, Node.js, Go,
-              GraphQL, Docker, and AWS. I still enjoy the full stack: crisp interfaces, boringly reliable systems, and
-              the glue that makes them feel like one product instead of several committees wearing a trench coat.
+              I’m on X as{' '}
+              <Link
+                href="https://x.com/enriikke"
+                className="underline decoration-zinc-400 underline-offset-4 hover:text-teal-500 hover:decoration-teal-500"
+              >
+                @enriikke
+              </Link>
+              .
+            </p>
+            <p>
+              If you want to reach me, email is best:{' '}
+              <Link
+                href="mailto:enrique@hey.com"
+                className="underline decoration-zinc-400 underline-offset-4 hover:text-teal-500 hover:decoration-teal-500"
+              >
+                enrique@hey.com
+              </Link>
+              .
             </p>
           </div>
         </div>

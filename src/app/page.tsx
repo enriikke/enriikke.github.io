@@ -6,7 +6,7 @@ import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon, XIcon } from '@/components/SocialIcons'
 import githubLogo from '@/images/logos/github.svg'
 import kyckLogo from '@/images/logos/kyck.svg'
-import skookumLogo from '@/images/logos/skookum.svg'
+import skookumLogo from '@/images/logos/skookum.jpeg'
 import portraitImage from '@/images/portrait.jpg'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -127,7 +127,7 @@ function Work() {
           <Role key={`${role.company}-${role.start}`} role={role} />
         ))}
       </ol>
-      <Button href="/resume.pdf" variant="secondary" className="group mt-6 w-full">
+      <Button href="/enrique-gonzalez-resume.pdf" variant="secondary" className="group mt-6 w-full">
         Download Resume
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
@@ -199,6 +199,17 @@ function Contact() {
   )
 }
 
+function TextLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="underline decoration-zinc-400 underline-offset-4 transition hover:text-teal-500 hover:decoration-teal-500 dark:decoration-zinc-500"
+    >
+      {children}
+    </Link>
+  )
+}
+
 export default function Home() {
   return (
     <Container className="mt-16 sm:mt-32">
@@ -207,65 +218,21 @@ export default function Home() {
           <Portrait />
         </div>
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">About</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            Hola! I’m Enrique. I live in Charlotte, NC, where I build software.
+          </h1>
           <div className="mt-10 space-y-10 text-lg text-zinc-700 dark:text-zinc-300">
+            <p>I love building web apps, developer tools, and experimenting with AI.</p>
             <p>
-              Hey, I’m Enrique. I’m a software engineer at{' '}
-              <Link
-                href="https://github.com"
-                className="underline decoration-zinc-400 underline-offset-4 hover:text-teal-500 hover:decoration-teal-500"
-              >
-                GitHub
-              </Link>
-              .
-            </p>
-            <p>I like building web apps, developer tools, and AI-powered product experiences.</p>
-            <p>
-              Recently I’ve been working on GitHub Copilot, including{' '}
-              <Link
-                href="https://github.com/copilot"
-                className="underline decoration-zinc-400 underline-offset-4 hover:text-teal-500 hover:decoration-teal-500"
-              >
-                Copilot on GitHub.com
-              </Link>
-              , GitHub Spark, MCP integrations, and memory/context systems for Copilot Business and Enterprise.
+              I work at <TextLink href="https://github.com">GitHub</TextLink>, where I’ve helped ship products like{' '}
+              <TextLink href="https://github.com/copilot">Copilot</TextLink>,{' '}
+              <TextLink href="https://github.com/features/spark">Spark</TextLink>,{' '}
+              <TextLink href="https://github.com/open-source/sponsors">Sponsors</TextLink>, and{' '}
+              <TextLink href="https://github.com/marketplace">Marketplace</TextLink>.
             </p>
             <p>
-              Before that, I worked on{' '}
-              <Link
-                href="https://github.com/sponsors"
-                className="underline decoration-zinc-400 underline-offset-4 hover:text-teal-500 hover:decoration-teal-500"
-              >
-                GitHub Sponsors
-              </Link>{' '}
-              and{' '}
-              <Link
-                href="https://github.com/marketplace"
-                className="underline decoration-zinc-400 underline-offset-4 hover:text-teal-500 hover:decoration-teal-500"
-              >
-                GitHub Marketplace
-              </Link>
-              . Before GitHub, I built software at Skookum and KYCK.
-            </p>
-            <p>
-              I’m on X as{' '}
-              <Link
-                href="https://x.com/enriikke"
-                className="underline decoration-zinc-400 underline-offset-4 hover:text-teal-500 hover:decoration-teal-500"
-              >
-                @enriikke
-              </Link>
-              .
-            </p>
-            <p>
-              If you want to reach me, email is best:{' '}
-              <Link
-                href="mailto:enrique@hey.com"
-                className="underline decoration-zinc-400 underline-offset-4 hover:text-teal-500 hover:decoration-teal-500"
-              >
-                enrique@hey.com
-              </Link>
-              .
+              Before that, I was building software at <TextLink href="https://www.method.com">Skookum</TextLink> (now
+              Method), and KYCK.
             </p>
           </div>
         </div>

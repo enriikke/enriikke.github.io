@@ -1,5 +1,5 @@
-# Hola
+# enriikke personal site
 
-This is my personal site built with Gatsby and deployed to GitHub Pages.
+Personal site for [imenrique.com](https://imenrique.com), built with Next.js, Tailwind CSS, Bun, and Biome.
 
-🤓✨❤️
+Development lives on `dev`; GitHub Actions exports a static build to `main` for GitHub Pages.

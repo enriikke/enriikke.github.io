@@ -137,7 +137,7 @@ function Work() {
 
 function Portrait() {
   return (
-    <div className="max-w-xs px-2.5 lg:max-w-none">
+    <div className="max-w-sm px-2.5 lg:max-w-none">
       <Image
         src={portraitImage}
         alt=""
@@ -149,52 +149,29 @@ function Portrait() {
   )
 }
 
-function ContactLink({
-  className,
+function SocialLink({
   href,
-  children,
   icon: Icon,
+  label,
 }: {
-  className?: string
   href: string
   icon: React.ComponentType<{ className?: string }>
-  children: React.ReactNode
+  label: string
 }) {
   return (
-    <li className={className}>
-      <Link
-        href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-      >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
-        <span className="ml-4">{children}</span>
-      </Link>
-    </li>
+    <Link href={href} aria-label={label} className="group -m-1 p-1">
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    </Link>
   )
 }
 
-function Contact() {
+function SocialLinks() {
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-      <h2 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Elsewhere</h2>
-      <ul className="mt-6 space-y-4">
-        <ContactLink href="https://github.com/enriikke" icon={GitHubIcon}>
-          GitHub
-        </ContactLink>
-        <ContactLink href="https://www.linkedin.com/in/enriquejgonzalez" icon={LinkedInIcon}>
-          LinkedIn
-        </ContactLink>
-        <ContactLink href="https://x.com/enriikke" icon={XIcon}>
-          X / Twitter
-        </ContactLink>
-        <ContactLink
-          href="mailto:enrique@hey.com"
-          icon={MailIcon}
-          className="border-t border-zinc-100 pt-4 dark:border-zinc-700/40"
-        >
-          enrique@hey.com
-        </ContactLink>
-      </ul>
+    <div className="mt-6 flex gap-6">
+      <SocialLink href="https://github.com/enriikke" icon={GitHubIcon} label="Follow on GitHub" />
+      <SocialLink href="https://www.linkedin.com/in/enriquejgonzalez" icon={LinkedInIcon} label="Follow on LinkedIn" />
+      <SocialLink href="https://x.com/enriikke" icon={XIcon} label="Follow on X" />
+      <SocialLink href="mailto:enrique@hey.com" icon={MailIcon} label="Email Enrique" />
     </div>
   )
 }
@@ -219,8 +196,9 @@ export default function Home() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hola! I’m Enrique. I live in Charlotte, NC, where I build software.
+            Hola! I’m Enrique. I’m a software engineer living in Charlotte, NC.
           </h1>
+          <SocialLinks />
           <div className="mt-10 space-y-10 text-lg text-zinc-700 dark:text-zinc-300">
             <p>I love building web apps, developer tools, and experimenting with AI.</p>
             <p>
@@ -239,7 +217,6 @@ export default function Home() {
 
         <div className="space-y-10 lg:pl-20">
           <Work />
-          <Contact />
         </div>
       </div>
     </Container>

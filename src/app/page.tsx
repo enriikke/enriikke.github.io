@@ -53,19 +53,6 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function SocialLink({
-  icon: Icon,
-  ...props
-}: React.ComponentPropsWithoutRef<typeof Link> & {
-  icon: React.ComponentType<{ className?: string }>
-}) {
-  return (
-    <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-    </Link>
-  )
-}
-
 interface Role {
   company: string
   title: string
@@ -197,58 +184,37 @@ function Contact() {
 
 export default function Home() {
   return (
-    <>
-      <Container className="mt-9">
-        <div className="max-w-2xl">
+    <Container className="mt-16 sm:mt-32">
+      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-y-12">
+        <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Software engineer building AI-powered developer experiences.
+            I’m Enrique Gonzalez. I build AI-powered developer experiences at GitHub.
           </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Enrique Gonzalez, a software engineer at GitHub working on Copilot and developer tools. I like building
-            products that feel simple, fast, and useful.
-          </p>
-          <div className="mt-6 flex gap-6">
-            <SocialLink href="https://x.com/enriikke" aria-label="Follow on X" icon={XIcon} />
-            <SocialLink href="https://github.com/enriikke" aria-label="Follow on GitHub" icon={GitHubIcon} />
-            <SocialLink
-              href="https://www.linkedin.com/in/enriquejgonzalez"
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
-            />
+          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <p>
+              I’m a senior software engineer at GitHub, where I build full-stack product experiences and platform
+              capabilities for GitHub Copilot across GitHub.com, Copilot Chat, agent workflows, memory and context
+              systems, and developer tooling.
+            </p>
+            <p>
+              My recent work has focused on turning AI capabilities into production product experiences: launching
+              Copilot on GitHub.com, building agent runtime and frontend foundations for GitHub Spark, helping establish
+              MCP-compatible extension patterns, and leading user-scoped Copilot Memory for Business and Enterprise
+              customers.
+            </p>
+            <p>
+              Before GitHub, I worked at Skookum and KYCK building web products across Rails, React, Node.js, Go,
+              GraphQL, Docker, and AWS. I still enjoy the full stack: crisp interfaces, boringly reliable systems, and
+              the glue that makes them feel like one product instead of several committees wearing a trench coat.
+            </p>
           </div>
         </div>
-      </Container>
 
-      <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <section id="about" className="lg:pr-16 xl:pr-24">
-            <h2 className="text-2xl font-bold tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100">About</h2>
-            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-              <p>
-                I’m a senior software engineer at GitHub, where I build full-stack product experiences and platform
-                capabilities for GitHub Copilot across GitHub.com, Copilot Chat, agent workflows, memory and context
-                systems, and developer tooling.
-              </p>
-              <p>
-                My recent work has focused on turning AI capabilities into production product experiences: launching
-                Copilot on GitHub.com, building agent runtime and frontend foundations for GitHub Spark, helping
-                establish MCP-compatible extension patterns, and leading user-scoped Copilot Memory for Business and
-                Enterprise customers.
-              </p>
-              <p>
-                Before GitHub, I worked at Skookum and KYCK building web products across Rails, React, Node.js, Go,
-                GraphQL, Docker, and AWS. I still enjoy the full stack: crisp interfaces, boringly reliable systems, and
-                the glue that makes them feel like one product instead of several committees wearing a trench coat.
-              </p>
-            </div>
-          </section>
-
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Work />
-            <Contact />
-          </div>
+        <div className="space-y-10 lg:pl-20">
+          <Work />
+          <Contact />
         </div>
-      </Container>
-    </>
+      </div>
+    </Container>
   )
 }

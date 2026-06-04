@@ -174,7 +174,7 @@ function TextLink({ href, children }: { href: string; children: React.ReactNode 
 
 export default function Home() {
   return (
-    <Container className="mt-16 sm:mt-32">
+    <Container className="mt-20 sm:mt-40">
       <div className="max-w-2xl">
         <div>
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
@@ -195,7 +195,7 @@ export default function Home() {
               Method), and KYCK.
             </p>
             <p>
-              If you want the formal version, here’s my <TextLink href="/enrique-gonzalez-resume.pdf">resume</TextLink>.
+              For the formal version, here’s my <TextLink href="/enrique-gonzalez-resume.pdf">resume</TextLink>.
             </p>
           </div>
         </div>

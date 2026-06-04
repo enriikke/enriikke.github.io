@@ -87,7 +87,7 @@ function Role({ role }: { role: Role }) {
   )
 }
 
-function Work() {
+export function Work() {
   const resume: Array<Role> = [
     {
       company: 'GitHub',
@@ -175,10 +175,10 @@ function TextLink({ href, children }: { href: string; children: React.ReactNode 
 export default function Home() {
   return (
     <Container className="mt-16 sm:mt-32">
-      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-y-12">
-        <div className="lg:max-w-xl">
+      <div className="max-w-2xl">
+        <div>
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hola! I’m Enrique. I’m a software engineer living in Charlotte, NC.
+            Hola! I’m Enrique, a software engineer living in Charlotte, NC.
           </h1>
           <SocialLinks />
           <div className="mt-10 space-y-10 text-lg text-zinc-700 dark:text-zinc-300">
@@ -194,11 +194,10 @@ export default function Home() {
               Before that, I was building software at <TextLink href="https://www.method.com">Skookum</TextLink> (now
               Method), and KYCK.
             </p>
+            <p>
+              If you want the formal version, here’s my <TextLink href="/enrique-gonzalez-resume.pdf">resume</TextLink>.
+            </p>
           </div>
-        </div>
-
-        <div className="space-y-10 lg:pl-20">
-          <Work />
         </div>
       </div>
     </Container>

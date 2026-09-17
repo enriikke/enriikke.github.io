@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <title>KYCK</title>
   <circle cx="60" cy="60" r="60" fill="#fff"/>
   <g transform="translate(8 8) scale(4.333333)" stroke="#18181B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />

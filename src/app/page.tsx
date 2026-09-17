@@ -184,8 +184,11 @@ export default function Home() {
           <div className="mt-10 space-y-10 text-lg text-zinc-700 dark:text-zinc-300">
             <p>I love building web apps, developer tools, and experimenting with AI.</p>
             <p>
-              I work at <TextLink href="https://github.com">GitHub</TextLink>, where I’ve helped ship products like{' '}
-              <TextLink href="https://github.com/copilot">Copilot</TextLink>,{' '}
+              I work on database stuff at <TextLink href="https://planetscale.com">PlanetScale</TextLink>.
+            </p>
+            <p>
+              Previously I worked at <TextLink href="https://github.com">GitHub</TextLink>, where I’ve helped ship
+              products like <TextLink href="https://github.com/copilot">Copilot</TextLink>,{' '}
               <TextLink href="https://github.com/features/spark">Spark</TextLink>,{' '}
               <TextLink href="https://github.com/open-source/sponsors">Sponsors</TextLink>, and{' '}
               <TextLink href="https://github.com/marketplace">Marketplace</TextLink>.
